@@ -16,18 +16,20 @@ namespace ClassDemo
     {
         static void Main(string[] args)
         {
-            var method = ShippingMethod.Express;
-            Console.WriteLine((int)method);
+            // Value types -- saved in stack
+            var a = 10;
+            var b = a;
+            b++;
+            Console.WriteLine(string.Format("a: {0}, b: {1}", a, b));
 
-            // Cast a relational number back to the enum type
-            var methodId = 3;
-            Console.WriteLine((ShippingMethod)methodId);
-            Console.WriteLine(method.ToString());
-
-            // How to parse a string back to the enum type
-            var methodName = "Express";
-            var shippingMethod = (ShippingMethod)Enum.Parse(typeof(ShippingMethod), methodName);
-            Console.WriteLine(shippingMethod);
+            // Reference type -- when you save the array2 into array1, it is a pointer, not a value
+            var array1 = new int[3] { 1, 2, 3 };
+            var array2 = array1;
+            array2[0] = 0;
+            // After you change the value of array2[0] it is referenced to the array1[0] and changes single
+            // value that's saved on the heap. Only the pointer to the memory location in the heap is saved
+            // in the stack. 
+            Console.WriteLine(array1[0]);
         }
     }
 }
