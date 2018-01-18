@@ -4,30 +4,30 @@ using ClassDemo.Math;
 
 namespace ClassDemo
 {
+    public enum ShippingMethod
+    {
+        RegualarAirMail = 1,
+        RegisteredAirMail = 2,
+        Express = 3
+    }
+
 
     class Program
     {
         static void Main(string[] args)
         {
-            var firstName = "Johnny";
-            var lastName = "Olson";
+            var method = ShippingMethod.Express;
+            Console.WriteLine((int)method);
 
-            // string.Format is the same, just easier to read
-            var myFullName = firstName + " " + lastName;
-            var fullName = string.Format("{0} {1}", firstName, lastName);
+            // Cast a relational number back to the enum type
+            var methodId = 3;
+            Console.WriteLine((ShippingMethod)methodId);
+            Console.WriteLine(method.ToString());
 
-            var names = new string[3] { "John", "Jack", "Mary" };
-            var formattedNames = string.Join(",", names);
-            Console.WriteLine(formattedNames);
-
-            // Verbatim strings. These two have the same output
-            var text = "Hi John\nLook into the following paths:\nc:\\folder1\\folder2\nc:\\folder3\\folder4";
-            Console.WriteLine(text);
-            var textVerbatim = @"Hi John
-Look into the following paths:
-c:\folder1\folder2
-c:\folder3\folder4";
-            Console.WriteLine(textVerbatim);
+            // How to parse a string back to the enum type
+            var methodName = "Express";
+            var shippingMethod = (ShippingMethod)Enum.Parse(typeof(ShippingMethod), methodName);
+            Console.WriteLine(shippingMethod);
         }
     }
 }
