@@ -1,0 +1,7 @@
+C:\Users\Johnny\source\repos\ClassDemo\ClassDemo\obj\Debug\ClassDemo.csprojResolveAssemblyReference.cache
+C:\Users\Johnny\source\repos\ClassDemo\ClassDemo\obj\Debug\ClassDemo.csproj.CoreCompileInputs.cache
+C:\Users\Johnny\source\repos\ClassDemo\ClassDemo\bin\Debug\ClassDemo.exe.config
+C:\Users\Johnny\source\repos\ClassDemo\ClassDemo\bin\Debug\ClassDemo.exe
+C:\Users\Johnny\source\repos\ClassDemo\ClassDemo\bin\Debug\ClassDemo.pdb
+C:\Users\Johnny\source\repos\ClassDemo\ClassDemo\obj\Debug\ClassDemo.exe
+C:\Users\Johnny\source\repos\ClassDemo\ClassDemo\obj\Debug\ClassDemo.pdb
