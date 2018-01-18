@@ -9,31 +9,20 @@ namespace ClassDemo
     {
         static void Main(string[] args)
         {
-            var john = new Person();
-            john.FirstName = "John";
-            john.LastName = "Smith";
-            john.Introduce();
+            string firstName = "Johnny";
+            string lastName = "Olson";
 
-            Calculator calculator = new Calculator();
-            var result = calculator.Add(1, 2);
-            Console.WriteLine(result);
+            string name = string.Format("{0} {1}", firstName, lastName);
 
-            var numbers = new int[3];
-            numbers[0] = 1;
+            Console.WriteLine(name);
 
-            Console.WriteLine(numbers[0]);
-            Console.WriteLine(numbers[1]);
-            Console.WriteLine(numbers[2]);
+            // string.Join
+            var numbers = new int[3] { 1, 2, 3 };
+            string list = string.Join(",", numbers);
 
-            var flags = new bool[3];
-            flags[0] = true;
-
-            Console.WriteLine(flags[0]);
-            Console.WriteLine(flags[1]);
-            Console.WriteLine(flags[2]);
-
-            var names = new string[3] { "jack", "john", "mary" };
-
+            // Verbatim strings: These 2 are equal
+            string path = "c:\\programs\\users\\johnny";
+            string path2 = @"c:\programs\users\johnny";
         }
     }
 }
