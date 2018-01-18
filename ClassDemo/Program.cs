@@ -9,20 +9,25 @@ namespace ClassDemo
     {
         static void Main(string[] args)
         {
-            string firstName = "Johnny";
-            string lastName = "Olson";
+            var firstName = "Johnny";
+            var lastName = "Olson";
 
-            string name = string.Format("{0} {1}", firstName, lastName);
+            // string.Format is the same, just easier to read
+            var myFullName = firstName + " " + lastName;
+            var fullName = string.Format("{0} {1}", firstName, lastName);
 
-            Console.WriteLine(name);
+            var names = new string[3] { "John", "Jack", "Mary" };
+            var formattedNames = string.Join(",", names);
+            Console.WriteLine(formattedNames);
 
-            // string.Join
-            var numbers = new int[3] { 1, 2, 3 };
-            string list = string.Join(",", numbers);
-
-            // Verbatim strings: These 2 are equal
-            string path = "c:\\programs\\users\\johnny";
-            string path2 = @"c:\programs\users\johnny";
+            // Verbatim strings. These two have the same output
+            var text = "Hi John\nLook into the following paths:\nc:\\folder1\\folder2\nc:\\folder3\\folder4";
+            Console.WriteLine(text);
+            var textVerbatim = @"Hi John
+Look into the following paths:
+c:\folder1\folder2
+c:\folder3\folder4";
+            Console.WriteLine(textVerbatim);
         }
     }
 }
