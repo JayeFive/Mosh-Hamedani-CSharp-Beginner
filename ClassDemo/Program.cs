@@ -2,37 +2,61 @@
 using ClassDemo.Math;
 
 
-namespace ClassDemo
+namespace Conditionals
 {
-    public class Person
-    {
-        public int Age;
-    }
 
     class Program
     {
         static void Main(string[] args)
         {
-            // Proof of scope of value types
-            var number = 1;
-            Increment(number);
-            Console.WriteLine(number);
+            // If statements
+            int hour = 12;
 
-            // This value type on the other hand will indeed change the person object since 
-            // the reference simply points to the object itself
-            var person = new Person() { Age = 20 };
-            MakeOld(person);
-            Console.WriteLine(person.Age);
-        }
+            if (hour > 0 && hour < 12)
+            {
+                Console.WriteLine("It's morning");
+            }
+            else if (hour >= 12 && hour < 18)
+            {
+                Console.WriteLine("It's afternoon");
+            }
+            else
+            {
+                Console.WriteLine("It's evening");
+            }
 
-        public static void Increment(int number)
-        {
-            number += 10;
-        }
 
-        public static void MakeOld(Person person)
-        {
-            person.Age += 10;
+            // Ternary statement
+            var isGoldCustomer = true;
+            float price = (isGoldCustomer) ? 19.95f : 29.95f;
+            // Same as:
+            // if (isGoldCustomer)
+            //     price = 19.95f;
+            // else
+            //     price = 29.95f;
+
+            Console.WriteLine(price);
+
+
+            // Switch statements
+            var season = Season.Autumn;
+
+            switch (season)
+            {
+                case Season.Autumn:
+                    Console.WriteLine("It's Autumn and beautiful");
+                    break;
+                case Season.Summer:
+                    Console.WriteLine("It's a great day for the beach");
+                    break;
+                case Season.Spring:
+                case Season.Winter:
+                    Console.WriteLine("We've got a promotion!");
+                    break;
+                default:
+                    Console.WriteLine("I don't understand that season");
+                    break;
+            }
         }
     }
 }
